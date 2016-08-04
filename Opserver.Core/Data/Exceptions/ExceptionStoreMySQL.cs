@@ -107,7 +107,7 @@ FROM
         e.id,
             (CASE e.applicationname
                 WHEN curType(e.applicationname,0) THEN curRow(2)
-                ELSE curRow(1) AND curType(e.applicationname,1)
+                ELSE curRow(0)+1 AND curType(e.applicationname,1)
             END) + 1 AS r
     FROM
         Exceptions e, (SELECT curRow(0), curType(NULL,1)) r
@@ -173,7 +173,7 @@ FROM
         e.id,
             (CASE e.applicationname
                 WHEN curType(e.applicationname,0) THEN curRow(2)
-                ELSE curRow(1) AND curType(e.applicationname,1)
+                ELSE curRow(0)+1 AND curType(e.applicationname,1)
             END) + 1 AS r
     FROM
         Exceptions e, (SELECT curRow(0), curType(NULL,1)) r
