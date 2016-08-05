@@ -147,6 +147,7 @@
     <Compile Include="Helpers\MiniProfilerCacheStorage.cs" />
     <Compile Include="Helpers\TestItem.cs" />
     <Compile Include="Helpers\Theme.cs" />
+    <Compile Include="Models\Security\AccountProvider.cs" />
     <Compile Include="Views\Dashboard\Node.Graph.Model.cs">
       <DependentUpon>Node.Graph.cshtml</DependentUpon>
     </Compile>
@@ -202,12 +203,12 @@
     <Content Include="App_Code\Helpers.cshtml" />
     <Content Include="Config\DashboardSettings.json.example" />
     <Content Include="Config\ElasticSettings.json.example" />
-    <Content Include="Config\ExceptionsSettings.json.example" />
+    <Content Include="Config\ExceptionsSettings.json" />
     <Content Include="Config\HAProxySettings.json.example" />
     <Content Include="Config\PollingSettings.json.example" />
     <Content Include="Config\RedisSettings.json.example" />
-    <Content Include="Config\SecuritySettings.config.example" />
-    <Content Include="Config\SQLSettings.json.example" />
+    <Content Include="Config\SecuritySettings.config" />
+    <Content Include="Config\SQLSettings.json" />
     <Content Include="Content\img\logo\logo.eps" />
     <Content Include="Config\JiraSettings.json.example" />
     <Content Include="App_Code\Gauges.cshtml" />
@@ -691,6 +692,7 @@
     <Content Include="Views\Hub\Index.SQL.cshtml" />
     <Content Include="Views\Hub\Index.Dashboard.cshtml" />
     <Content Include="Views\Hub\Index.Issues.cshtml" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\js\Scripts.js" />

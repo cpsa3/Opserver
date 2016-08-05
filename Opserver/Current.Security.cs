@@ -18,6 +18,8 @@ namespace StackExchange.Opserver
                     return new ActiveDirectoryProvider(SecuritySettings.Current);
                 case "alladmin":
                     return new EveryonesAnAdminProvider();
+                case "account":
+                    return new AccountProvider();
                 //case "allview":
                 default:
                     return new EveryonesReadOnlyProvider();

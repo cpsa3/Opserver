@@ -29,6 +29,10 @@ namespace StackExchange.Opserver
         [ConfigurationProperty("InternalNetworks")]
         public SettingsCollection<Network> InternalNetworks => this["InternalNetworks"] as SettingsCollection<Network>;
 
+        [ConfigurationProperty("Accounts")]
+        public SettingsCollection<Account> Accounts => this["Accounts"] as SettingsCollection<Account>;
+
+
         public class Network : ConfigurationElement, ISettingsElementNamed
         {
             /// <summary>
@@ -54,6 +58,21 @@ namespace StackExchange.Opserver
             /// </summary>
             [ConfigurationProperty("subnet")]
             public string Subnet => this["subnet"] as string;
+        }
+
+        public class Account: ConfigurationElement, ISettingsElementNamed
+        {
+            /// <summary>
+            /// The account username
+            /// </summary>
+            [ConfigurationProperty("name", IsRequired = true)]
+            public string Name => this["name"] as string;
+
+            /// <summary>
+            /// The account password
+            /// </summary>
+            [ConfigurationProperty("pwd")]
+            public string Password => this["pwd"] as string;
         }
 
         public class SettingsCollection<T> : ConfigurationElementCollection where T : ConfigurationElement, ISettingsElementNamed, new()
